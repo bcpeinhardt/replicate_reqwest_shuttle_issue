@@ -13,8 +13,9 @@ async fn main() -> Result<(), Box<dyn std::error::Error>> {
     // Fails
     let resp = reqwest::get("https://hello_world.shuttleapp.rs/hello")
         .await?
-        .json::<HashMap<String, String>>()
+        .json::<String>()
         .await?;
     println!("{:#?}", resp);
+
     Ok(())
 }
